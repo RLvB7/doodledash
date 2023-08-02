@@ -1,3 +1,12 @@
+button {
+	margin: 10px;
+	background-color: royalblue;
+	color: white;
+	padding: 10px;
+	border: 2px solid royalblue;
+	border-radius: 10px;
+}
+
 .grid {
 	display: flex;
 	flex-direction: column;
