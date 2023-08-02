@@ -1,0 +1,14 @@
+.grid {
+	display: flex;
+	flex-direction: column;
+	width: 960px;
+	height: 960px;
+}
+
+.r {
+	display: flex;
+}
+
+.a {
+	background-color: black;
+}
