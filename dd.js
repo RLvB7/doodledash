@@ -1,8 +1,7 @@
 function drawGrid() {
 	grid.replaceChildren();
 
-	let size = (960 / gridResolution) + "px";
-	style.innerHTML = `.s {width: ${size}; height: ${size};}`;
+	updateStyle();
 
 	for (let r = 0; r < gridResolution; r++) {
 		let newRow = document.createElement("div");
@@ -31,13 +30,26 @@ function changeGridResolution() {
 	drawGrid();
 }
 
+function updateStyle() {
+	let size = (960 / gridResolution) + "px";
+	flexible = flexibleInput.checked;
+
+	style.innerHTML = flexible ?
+		".s {flex: 1;} .r {flex: 1;} .grid {width: auto; height: auto;} " +
+		"body {overflow: hidden;}" :
+		`.s {width: ${size}; height: ${size};}`;
+}
+
 let gridResolution = 16;
+let flexible = false;
 
 const button = document.getElementsByTagName("button")[0];
+const flexibleInput = document.getElementById("flexible");
 const grid = document.getElementsByClassName("grid")[0];
 const style = document.createElement("style");
 
 button.addEventListener('click', () => { changeGridResolution(); });
+flexibleInput.addEventListener('click', () => { updateStyle(); });
 
 style.type = "text/css";
 document.getElementsByTagName("head")[0].appendChild(style);
