@@ -14,6 +14,7 @@ button {
 	max-height: 98vh;
 	display: flex;
 	flex-direction: column;
+	gap: 5px;
 }
 
 .controls {
@@ -33,8 +34,4 @@ button {
 
 .r {
 	display: flex;
-}
-
-.a {
-	background-color: black;
 }
