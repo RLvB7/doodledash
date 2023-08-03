@@ -1,5 +1,6 @@
 body {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin: 0;
 }
 
 button {
@@ -11,10 +12,17 @@ button {
 }
 
 .container {
-	height: 98vh;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	gap: 5px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	background-color: lightblue;
+	padding: 10px;
+	align-items: center;
 }
 
 .controls {
@@ -22,6 +30,16 @@ button {
 	align-items: center;
 	flex-wrap: wrap;
 	gap: 10px;
+}
+
+.logo {
+	font-weight: bold;
+	font-size: 40px;
+	font-style: italic;
+	background: linear-gradient( red , blue);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	margin-right: 12px;
 }
 
 .grid {
