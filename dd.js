@@ -88,7 +88,7 @@ function updateStyle() {
 const rgba2hex = (rgba) => `#${rgba.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+\.{0,1}\d*))?\)$/).slice(1).map((n, i) => (i === 3 ? Math.round(parseFloat(n) * 255) : parseFloat(n)).toString(16).padStart(2, '0').replace('NaN', '')).join('')}`;	// Source: https://stackoverflow.com/a/3627747
 
 let gridResolution = 16;
-let flexible = false;
+let flexible = true;
 let color = false;
 let progressive = false;
 
