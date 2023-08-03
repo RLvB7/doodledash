@@ -49,13 +49,15 @@ let gridResolution = 16;
 let flexible = false;
 let color = false;
 
-const button = document.getElementsByTagName("button")[0];
+const clearButton = document.getElementById("clear");
+const changeResButton = document.getElementById("changeRes");
 const flexibleInput = document.getElementById("flexible");
 const colorInput = document.getElementById("color");
 const grid = document.getElementsByClassName("grid")[0];
 const style = document.createElement("style");
 
-button.addEventListener('click', () => { changeGridResolution(); });
+clearButton.addEventListener('click', () => { drawGrid(); });
+changeResButton.addEventListener('click', () => { changeGridResolution(); });
 flexibleInput.addEventListener('click', () => { updateStyle(); });
 colorInput.addEventListener('click', () => { color = colorInput.checked; });
 
