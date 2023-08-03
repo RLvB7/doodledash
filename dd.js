@@ -19,7 +19,12 @@ function drawGrid() {
 }
 
 function onHover(e) {
-	e.target.classList.add("a");
+	if (!color) {
+		e.target.classList.add("a");
+	} else {
+		randomColor = Math.floor(Math.random()*16777215).toString(16);
+		e.target.style.backgroundColor = "#" + randomColor;
+	}
 }
 
 function changeGridResolution() {
@@ -42,14 +47,17 @@ function updateStyle() {
 
 let gridResolution = 16;
 let flexible = false;
+let color = false;
 
 const button = document.getElementsByTagName("button")[0];
 const flexibleInput = document.getElementById("flexible");
+const colorInput = document.getElementById("color");
 const grid = document.getElementsByClassName("grid")[0];
 const style = document.createElement("style");
 
 button.addEventListener('click', () => { changeGridResolution(); });
 flexibleInput.addEventListener('click', () => { updateStyle(); });
+colorInput.addEventListener('click', () => { color = colorInput.checked; });
 
 style.type = "text/css";
 document.getElementsByTagName("head")[0].appendChild(style);
